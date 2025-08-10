@@ -47,10 +47,7 @@ void MTLock::r_Lock( )
 		std::this_thread::yield( ); // Yield to allow other threads to run
 	}
 
-	while( 0 != InterlockedCompareExchange( &m_rlock, m_rlock + 1, m_rlock ) )
-	{
-		std::this_thread::yield( ); // Yield to allow other threads to run
-	}
+	InterlockedAdd( &m_rlock, 1 );
 }
 
 bool MTLock::r_TryLock( )
@@ -59,8 +56,6 @@ bool MTLock::r_TryLock( )
 	{
 		return false; // Cannot acquire read lock if write lock is held
 	}
-
-	unsigned long long current_rlock = 0;
 
 	InterlockedAdd( &m_rlock, 1 );
 

@@ -102,6 +102,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -126,12 +127,22 @@
     <ClCompile Include="MTManager.cpp" />
     <ClCompile Include="MTMgr.cpp" />
     <ClCompile Include="MTSpinLock.cpp" />
+    <ClCompile Include="PrintBank.cpp" />
+    <ClCompile Include="PrintDescription.cpp" />
+    <ClCompile Include="PrintDescription.h" />
+    <ClCompile Include="PrintInstance.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MTMap.h" />
     <ClInclude Include="MTSpinLock.h" />
     <ClInclude Include="MTMgr.h" />
+    <ClInclude Include="MTUtil.h" />
+    <ClInclude Include="PrintBank.h" />
+    <ClInclude Include="PrintInstance.h" />
     <ClInclude Include="Task.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="test.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

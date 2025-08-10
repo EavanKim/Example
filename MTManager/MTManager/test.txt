@@ -1,0 +1,4 @@
+check, loading
+test, issimulation
+target, fmoddescriptor
+play, fmodinstance

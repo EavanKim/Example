@@ -39,6 +39,33 @@ public:
 		m_lock.w_Unlock();
 	}
 
+	void Lock()
+	{
+		m_lock.w_Lock( );
+	}
+
+	void Unlock()
+	{
+		m_lock.w_Unlock( );
+	}
+
+	typename std::unordered_map<Key, Value>::iterator begin()
+	{
+		return m_map.begin();
+	}
+
+	typename std::unordered_map<Key, Value>::iterator end()
+	{
+		return m_map.end();
+	}
+
+	void Clear()
+	{
+		m_lock.w_Lock( );
+		m_map.clear( );
+		m_lock.w_Unlock( );
+	}
+
 private:
 	MTLock m_lock = MTLock();
 	std::unordered_map<Key, Value> m_map = {};
